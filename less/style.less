@@ -1,0 +1,137 @@
+@import "reset";
+@import "preloader";
+
+// Breakpoints
+/*---------------------*/
+
+@mobile: ~"only screen and (max-width: 529px)";
+@tablet: ~"only screen and (min-width: 530px) and (max-width: 768px)";
+@tablet-xl: ~"only screen and (min-width: 769px) and (max-width: 1024px)";
+@desktop: ~"only screen and (min-width: 1025px) and (max-width: 1439px)";
+@desktop-xl: ~"only screen and (min-width: 1440px) and (max-width: 1799px)";
+@desktop-xxl: ~"only screen and (min-width: 1800px)";
+
+/*----------------------*/
+
+body {
+  background: #1e2122;
+  font-size: 14px;
+  color: #fff;
+}
+
+.search-form {
+  margin: 15px 0;
+  .container {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @media @mobile {
+      width: 58%;
+    }
+    @media @tablet {
+      width: 50%;
+    }
+    @media @tablet-xl {
+      width: 41%;
+    }
+    @media @desktop {
+      width: 43%;
+    }
+    @media @desktop-xl {
+      width: 40%;
+    }
+    @media @desktop-xxl {
+      width: 34%;
+    }
+  }
+  h1 {
+    text-align: center;
+    font-size: 24px;
+  }
+  form {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+  }
+
+  &__search-text {
+    padding: 7px 5px;
+    width: 100%;
+    margin-right: 15px;
+    background: #1e2122;
+    color: #f6f6f6;
+    border: 0;
+    border-bottom: 1px solid;
+    font-size: 14px;
+    outline: 0;
+    height: 20px;
+    &:focus {
+      border-bottom: 1px solid #ab122c;
+      transition: .3s;
+    }
+  }
+  &__result-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__show-more {
+    margin-top: 10px;
+  }
+  &__submit {
+    padding: 11px 5px;
+    width: 200px;
+    background: #1e2122;
+    border: 1px solid #fcfcfc;
+    margin-top: 15px;
+    font-size: 14px;
+    outline: 0;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid #ab122c;
+      transition: .3s;
+    }
+  }
+
+  &__btn {
+    background: #ab122c;
+    border: #ab122c 1px solid;
+    color: #fff;
+    font-size: 14px;
+    text-transform: lowercase;
+    cursor: pointer;
+  }
+
+  #images {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #images .results {
+    position: relative;
+    flex: 1 1 100px;
+    max-height: 100px;
+    overflow: hidden;
+    margin: 5px;
+    @media @mobile {
+      flex: inherit;
+    }
+  }
+}
+
+//only ie
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .search-form .container {
+    display: block;
+  }
+}
